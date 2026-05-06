@@ -1,5 +1,3 @@
-# Hashicorp-Vault-Zero-to-Hero
-
 # 🔐 Vault Zero to Hero
 
 Master HashiCorp Vault from basics to production with a structured 21-day roadmap.
