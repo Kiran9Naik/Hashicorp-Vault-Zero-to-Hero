@@ -8,7 +8,7 @@ Inspired by real-world DevOps learning paths, this repository focuses on **hands
 
 ## 📺 YouTube Playlist
 
-👉 (Add your playlist link here)
+👉 https://www.youtube.com/playlist?list=PLW2b2dfcCdmRMHj1UBkKjCoYOxr081EzX
 
 ---
 
@@ -102,6 +102,3 @@ If this helps you:
 
 ---
 
-## 📢 Author
-
-Built as part of a DevOps learning journey for mastering HashiCorp Vault.
