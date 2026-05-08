@@ -17,6 +17,10 @@
 # 1. Verify Vault Installation
 # ==========================================================
 
+# vault should be installed and available in your system's PATH.
+# If you haven't installed Vault yet, follow the instructions here:
+# https://developer.hashicorp.com/vault/install
+
 vault --version
 
 
