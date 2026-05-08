@@ -1,92 +1,81 @@
-# Day 1 - Introduction to Vault & Secrets Management 🔐
+
+
+# Day 1 - Introduction to Vault and Secrets Management
+
+## What You Will Learn Today
+
+In Day 1, we will understand why secrets management is important and how HashiCorp Vault helps solve real-world security problems.
+
+By the end of this day, you will understand:
+
+- What secrets are
+- Why storing secrets directly in code is risky
+- Problems with traditional secret management
+- What HashiCorp Vault is
+- Why Vault is useful in modern DevOps environments
+- Basic Vault flow
+- Real-world Vault use cases
 
 ---
 
-## 🎯 What You Will Learn Today
+## What are Secrets?
 
-* What are secrets?
-* Problems with traditional secret management
-* What is Vault?
-* Why Vault is needed in modern applications
+Secrets are sensitive values used by applications, systems, and users to authenticate or connect with other services.
 
----
+Examples of secrets:
 
-## ☁️ Understanding the Problem
+- Database username and password
+- API keys
+- Access tokens
+- SSH keys
+- TLS certificates
+- Cloud credentials
+- Application passwords
 
-In traditional systems, secrets are stored in:
-
-* Source code
-* Environment variables
-* Configuration files
-
-### ❗ Issues:
-
-* Hard to manage
-* Easy to leak
-* No proper access control
-* Difficult to rotate
+These values should never be exposed publicly.
 
 ---
 
-## 🔄 Traditional vs Vault Approach
+## The Problem Without Vault
 
-### ❌ Without Vault:
+In many real-world applications, secrets are stored in unsafe places such as:
 
-Application → Directly uses secrets → Security risk
+- Source code
+- `.env` files
+- Configuration files
+- CI/CD pipeline variables without proper control
+- Shared documents
+- Local machines
+- Plain Kubernetes secrets without additional protection
 
-### ✅ With Vault:
-
-Application → Authenticate → Vault → Get temporary secret
-
----
-
-## 🔐 What is Vault?
-
-HashiCorp Vault is a tool used to:
-
-* Securely store secrets
-* Control access
-* Generate dynamic credentials
-* Rotate secrets automatically
+This creates serious security risks.
 
 ---
 
-## ⚖️ Why Not Just Use Environment Variables?
+## Common Risks
 
-| Method        | Problem            |
-| ------------- | ------------------ |
-| Env Variables | Static & exposed   |
-| Config Files  | Hardcoded secrets  |
-| Vault         | Secure & dynamic ✅ |
+If secrets are not managed properly, the following problems can happen:
 
----
-
-## 🧠 Core Concepts (Preview)
-
-* Secrets Engine
-* Authentication
-* Policies
-* Tokens
-
-(Detailed in upcoming days)
+- Secrets can be leaked through GitHub repositories
+- Developers may accidentally expose credentials
+- Old credentials may never get rotated
+- Multiple teams may share the same credentials
+- There may be no clear audit trail
+- Access control becomes difficult
+- Production credentials may be reused in lower environments
 
 ---
 
-## 🌍 Real-World Use Cases
+## Traditional Approach vs Vault Approach
 
-* Secure database credentials
-* Microservices secret sharing
-* API key protection
-* Encryption services
+### Without Vault
 
----
-
-## 👉 What’s Next?
-
-In Day 2:
-
-* Install Vault
-* Run Vault locally
-* Explore UI & CLI
-
----
+```text
+Application
+     |
+     | Directly reads password/API key
+     v
+Config file / Env variable / Source code
+     |
+     v
+Security Risk
