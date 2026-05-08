@@ -79,3 +79,21 @@ Config file / Env variable / Source code
      |
      v
 Security Risk
+```
+
+### With Vault
+```text
+User / Application
+        |
+        | Login using auth method
+        v
+HashiCorp Vault
+        |
+        | Check policy
+        v
+Secrets Engine
+        |
+        | Return secret if allowed
+        v
+User / Application
+```
