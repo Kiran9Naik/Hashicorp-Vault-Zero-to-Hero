@@ -17,36 +17,24 @@ By the end of this day, you will understand:
 
 ---
 
-## Quick Recap from Day 1
+## Vault Installation
 
-In Day 1, we learned that secrets are sensitive values such as:
+Vault is distributed as a binary.
 
-- Database passwords
-- API keys
-- Tokens
-- Certificates
-- Cloud credentials
+That means we download the Vault executable and configure it so that we can run Vault commands from the terminal.
 
-We also understood that storing secrets directly in code, config files, or environment variables creates security risks.
+Installing Vault on Windows:
 
-Vault solves this problem by providing centralized secrets management.
+Steps:
 
----
+Download Vault from the official HashiCorp website.
+https://developer.hashicorp.com/vault/install#windows
+Extract the ZIP file.
+Copy the folder path where vault.exe is available.
+Add that folder path to the system PATH environment variable.
+Open a new terminal.
 
-## What are We Doing Today?
+After installation, the following command should work:
 
-Today we are not going deep into policies, authentication methods, or secrets engines.
-
-The goal is simple:
-
-```text
-Install Vault
-     |
-     v
-Start Vault locally
-     |
-     v
-Login to Vault UI
-     |
-     v
-Prepare for hands-on practice
+```bash
+vault --version
